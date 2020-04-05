@@ -14,7 +14,7 @@ public class Test {
     }
 
     @org.junit.Test
-    public void testWithWithWhere() throws ParserException {
-
+    public void testWithWithWhereAndSkipAndLimit() throws ParserException {
+        Assert.assertEquals("db.collection.find({field: 5}).skip(3).limit(5)", parser.parse("select * from collection where field = 5 offset 3 limit 5").toString());
     }
 }

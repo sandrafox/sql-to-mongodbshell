@@ -62,6 +62,7 @@ public class Parser {
     private Where where() throws ParserException {
         skipSpaces();
         if (analyzer.getCurToken() != Token.WHERE) return null;
+        analyzer.nextToken();
         Where where = new Where();
         where.addPredicate(predicate());
         skipSpaces();
@@ -130,6 +131,7 @@ public class Parser {
         if (analyzer.getCurToken() != Token.NUMBER) throw new SyntaxError();
         Skip skip = new Skip();
         skip.setN(Integer.parseInt(analyzer.getCurString()));
+        analyzer.nextToken();
         return skip;
     }
 
@@ -141,6 +143,7 @@ public class Parser {
         if (analyzer.getCurToken() != Token.NUMBER) throw new SyntaxError();
         Limit limit = new Limit();
         limit.setN(Integer.parseInt(analyzer.getCurString()));
+        analyzer.nextToken();
         return limit;
     }
 }

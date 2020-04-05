@@ -14,7 +14,7 @@ public class Where {
         for (Predicate p : predicates) {
             sb.append(p.toString() + ",");
         }
-        sb.deleteCharAt(sb.length() - 1).append("}");
+        sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
 }
