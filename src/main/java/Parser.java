@@ -3,9 +3,10 @@ import java.util.List;
 public class Parser {
     private LexicalAnalyzer analyzer;
 
-    public Query parse(List<String> s) throws ParserException {
+    public Query parse(String s) throws ParserException {
         analyzer = new LexicalAnalyzer();
-        analyzer.analyze(s.get(s.size() - 1));
+        s = s.toLowerCase();
+        analyzer.analyze(s);
         analyzer.nextToken();
         return query();
     }
