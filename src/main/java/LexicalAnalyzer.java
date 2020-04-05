@@ -83,6 +83,7 @@ public class LexicalAnalyzer {
                             curString = getString(6);
                             if (curString.equals("select")) {
                                 curToken = Token.SELECT;
+                                nextChar();
                                 return;
                             }
                             break;
@@ -90,6 +91,7 @@ public class LexicalAnalyzer {
                             curString = getString(4);
                             if (curString.equals("from")) {
                                 curToken = Token.FROM;
+                                nextChar();
                                 return;
                             }
                             if (curString.equals("fals")) {
@@ -97,6 +99,7 @@ public class LexicalAnalyzer {
                                 if (curChar == 'e') {
                                     curString += curChar;
                                     curToken = Token.BOOL;
+                                    nextChar();
                                     return;
                                 }
                                 if (!(Character.isLetter(curChar) || curChar == '_' || Character.isDigit(curChar))) {
@@ -110,6 +113,7 @@ public class LexicalAnalyzer {
                             curString = getString(5);
                             if (curString.equals("where")) {
                                 curToken = Token.WHERE;
+                                nextChar();
                                 return;
                             }
                             break;
@@ -117,6 +121,7 @@ public class LexicalAnalyzer {
                             curString = getString(6);
                             if (curString.equals("offset")) {
                                 curToken = Token.OFFSET;
+                                nextChar();
                                 return;
                             }
                             break;
@@ -124,6 +129,7 @@ public class LexicalAnalyzer {
                             curString = getString(5);
                             if (curString.equals("limit")) {
                                 curToken = Token.LIMIT;
+                                nextChar();
                                 return;
                             }
                             break;
@@ -132,6 +138,7 @@ public class LexicalAnalyzer {
                             curString = getString(4);
                             if (curString.equals("true")) {
                                 curToken = Token.BOOL;
+                                nextChar();
                                 return;
                             }
                             break;
@@ -139,6 +146,7 @@ public class LexicalAnalyzer {
                             curString = getString(3);
                             if (curString.equals("and")) {
                                 curToken = Token.AND;
+                                nextChar();
                                 return;
                             }
                             break;

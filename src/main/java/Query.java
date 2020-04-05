@@ -48,7 +48,7 @@ public class Query {
     @Override
     public String toString() {
         return "db." + collection.toString() + ".find({" + (where == null ? "" : where.toString()) + "}" +
-                (fields == null ? "" : fields.toString()) + (skip == null ? "" : skip.toString()) +
+                (fields == null ? "" : fields.toString()) + ")" + (skip == null ? "" : skip.toString()) +
                 (limit == null ? "" : limit.toString());
     }
 }
